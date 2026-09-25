@@ -135,7 +135,7 @@ if __name__ == "__main__":
     print("Deleting 30 (Node with children)...")
     bst.delete(30)
     bst.inorder(bst.root)
-    print()
+    print("\n")
 
     print("Inserting 20")
     bst.insert(20)
