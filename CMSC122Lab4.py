@@ -136,3 +136,8 @@ if __name__ == "__main__":
     bst.delete(30)
     bst.inorder(bst.root)
     print()
+
+    print("Inserting 20")
+    bst.insert(20)
+    bst.inorder(bst.root)
+    print()
