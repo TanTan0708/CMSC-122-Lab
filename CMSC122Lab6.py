@@ -1,5 +1,4 @@
-# Each node is like a single box that holds a value and points to left and right boxes
-# NEW: every box also remembers its height (how many levels are under it, counting itself)
+
 class Node:
     def __init__(self, key):
         self.val = key
@@ -31,12 +30,6 @@ class AVLTree:
 
     # --- ROTATIONS (this is how the tree fixes itself) ---
     def rotate_right(self, y):
-        # y is too heavy on the left, so its left child x moves up
-        #       y            x
-        #      /            / \
-        #     x     -->    a   y
-        #    / \              /
-        #   a   b            b
         x = y.left
         b = x.right
 
@@ -48,12 +41,6 @@ class AVLTree:
         return x  # x is the new top of this branch
 
     def rotate_left(self, x):
-        # x is too heavy on the right, so its right child y moves up
-        #     x                y
-        #      \              / \
-        #       y    -->     x   c
-        #      / \            \
-        #     b   c            b
         y = x.right
         b = y.left
 
@@ -183,8 +170,7 @@ class AVLTree:
             if node.right is not None:
                 queue.append(node.right)
 
-    # --- EXTRA: draw the tree sideways so it's easy to show on video ---
-    # The root is on the left, right children are on top, left children are on the bottom
+
     def print_tree(self, node, level=0):
         if node is not None:
             self.print_tree(node.right, level + 1)
